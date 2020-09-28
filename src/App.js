@@ -1,14 +1,12 @@
 import React from 'react';
 import NavComponent from './containers/Navbar';
-import CardComponent from './components/Card';
-import api from './API/api';
+import CardList from './containers/CardList';
 
 function App() {
-  // api();
   return (
     <div className="App">
       <NavComponent />
-      <CardComponent />
+      <CardList />
     </div>
   );
 }
