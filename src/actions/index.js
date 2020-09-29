@@ -1,16 +1,16 @@
-export function getLatestLaunches(data) {
+export function getLaunches(launches) {
   return {
-    type: 'LATEST_LAUNCHES',
-    data,
+    type: 'ALL_LAUNCHES',
+    launches,
   };
 }
 
 export function loadLaunches() {
   return (dispatch) => {
-    return fetch('https://api.spacexdata.com/v4/launches/latest')
+    return fetch('https://api.spacexdata.com/v4/launches')
       .then((response) => response.json())
       .then((data) => {
-        dispatch(getLatestLaunches(data));
+        dispatch(getLaunches(data));
       });
   };
 }
