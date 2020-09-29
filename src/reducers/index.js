@@ -1,12 +1,12 @@
 const initialState = {
-  data: {},
+  launches: [],
 };
 
 const rootReducer = (state = initialState, action) => {
-  if (action.type === 'LATEST_LAUNCHES') {
+  if (action.type === 'ALL_LAUNCHES') {
     return {
       ...state,
-      data: action.data,
+      launches: action.launches,
     };
   }
   return {
