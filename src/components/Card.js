@@ -1,23 +1,31 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const CardComponent = ({ data }) => {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img
-        variant="top"
-        src={
-          data.links.flickr.small[0]
-            ? data.links.flickr.small[0]
-            : data.links.patch.small
-        }
-      />
-      <Card.Body>
-        <Card.Title>{data.name}</Card.Title>
-        <Card.Text>{data.details.substr(0, 150)}...</Card.Text>
-        <Button variant="primary">Read More</Button>
-      </Card.Body>
-    </Card>
+    <div className="col s12 m7">
+      <div className="card horizontal">
+        <div className="card-image">
+          <img
+            alt="Launch"
+            src={
+              data.links.flickr.small[0]
+                ? data.links.flickr.small[0]
+                : data.links.patch.small
+            }
+          />
+        </div>
+        <div className="card-stacked">
+          <div className="card-content">
+            <span className="card-title">{data.name}</span>
+            <p>{data.details.substr(0, 150)}...</p>
+          </div>
+          <div className="card-action">
+            <Link to={'/' + data.id}>Read More</Link>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
