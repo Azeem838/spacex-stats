@@ -22,7 +22,7 @@ class CardList extends Component {
       const cardList = prevLaunches.map((launch) => (
         <Card data={launch} key={launch.id} />
       ));
-      return <div className="container d-flex">{cardList}</div>;
+      return <div className="container launch-contain d-flex">{cardList}</div>;
     }
     return <div>Loading ...</div>;
   }
