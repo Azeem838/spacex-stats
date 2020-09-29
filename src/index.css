@@ -12,7 +12,42 @@ code {
     monospace;
 }
 
-.container {
+.launch-contain {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.material-icons {
+  vertical-align: middle;
+  padding-right: 0.5em;
+}
+
+.video-container {
+  overflow: hidden;
+  /* 16:9 aspect ratio */
+  padding-top: 33.333333333336%;
+  position: relative;
+  padding-bottom: 0;
+}
+
+.video-container iframe {
+  border: 0;
+  height: 100%;
+  left: 20%;
+  position: absolute;
+  top: 0;
+  width: 65%;
+}
+
+.launch-details {
+  width: 45%;
+}
+
+.nav-wrapper {
+  width: 45%;
+}
+
+.card {
+  margin: 0;
 }
