@@ -1,21 +1,41 @@
 import React from 'react';
-import { Navbar, Form, FormControl, Button, Nav } from 'react-bootstrap';
+import { NavLink, withRouter } from 'react-router-dom';
 
 const NavComponent = () => (
-  <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="#home">SpaceX Stats</Navbar.Brand>
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Launches</Nav.Link>
-      <Nav.Link href="#dragons">Dragons</Nav.Link>
-      <Nav.Link href="#rockets">Rockets</Nav.Link>
-      <Nav.Link href="#ships">Ships</Nav.Link>
-      <Nav.Link href="#landpads">Landpads</Nav.Link>
-    </Nav>
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-light">Search</Button>
-    </Form>
-  </Navbar>
+  <nav>
+    <div className="nav-wrapper">
+      <NavLink className="brand-logo" to="/">
+        SpaceX Stats
+      </NavLink>
+      <ul id="nav-mobile" className="right hide-on-med-and-down">
+        <li>
+          <NavLink className="nav-link" to="/">
+            Launches
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="nav-link" to="/dragons">
+            Dragons
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="nav-link" to="/rockets">
+            Rockets
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="nav-link" to="/ships">
+            Ships
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="nav-link" to="/landpads">
+            Landpads
+          </NavLink>
+        </li>
+      </ul>
+    </div>
+  </nav>
 );
 
-export default NavComponent;
+export default withRouter(NavComponent);
