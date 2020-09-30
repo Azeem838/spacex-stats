@@ -1,5 +1,6 @@
 const initialState = {
   launches: [],
+  rockets: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -7,6 +8,12 @@ const rootReducer = (state = initialState, action) => {
     return {
       ...state,
       launches: action.launches,
+    };
+  }
+  if (action.type === 'ALL_ROCKETS') {
+    return {
+      ...state,
+      rockets: action.rockets,
     };
   }
   return {
