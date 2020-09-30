@@ -12,7 +12,7 @@ const CardComponent = ({ data }) => {
     : links.patch.small;
   return (
     <div className="col s12 m6">
-      <Link to={`/${id}`}>
+      <Link data-testid="read-more" to={`/${id}`}>
         <div className="card horizontal hoverable">
           <div className="card-image">
             <img alt="Launch" src={imgCheck !== null ? imgCheck : logo} />
