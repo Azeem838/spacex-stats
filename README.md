@@ -15,12 +15,13 @@
 
 ## Built With
 
-- HTML, CSS
 - React.js
 - Redux.js
 - Styled with Materialize-css
 - Tested with Jest and react-testing-library
+- [SpaceX API](https://github.com/r-spacex/SpaceX-API)
 - ES6 JavaScript.
+- HTML, CSS
 
 ## Live Demo
 
