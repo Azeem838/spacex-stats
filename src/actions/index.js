@@ -14,3 +14,20 @@ export function loadLaunches() {
       });
   };
 }
+
+export function getRockets(rockets) {
+  return {
+    type: 'ALL_ROCKETS',
+    rockets,
+  };
+}
+
+export function loadRockets() {
+  return (dispatch) => {
+    return fetch('https://api.spacexdata.com/v4/rockets')
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(getRockets(data));
+      });
+  };
+}
