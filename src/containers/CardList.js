@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Card from '../components/Card';
 
 const CardList = (props) => {
@@ -27,7 +27,7 @@ const CardList = (props) => {
       <Card data={launch} key={launch.id} />
     ));
 
-    return <div className="container launch-contain">{cardList}</div>;
+    return <div className="launch-contain">{cardList}</div>;
   }
   return <div>Loading ...</div>;
 };
