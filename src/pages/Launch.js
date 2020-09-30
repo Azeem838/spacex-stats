@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Moment from 'moment';
 import M from 'materialize-css';
-import { getRockets } from '../actions';
 
 class Launch extends Component {
   state = {
@@ -25,6 +24,7 @@ class Launch extends Component {
     } catch (error) {
       return null;
     }
+    return null;
   }
 
   render() {
