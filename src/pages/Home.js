@@ -23,12 +23,14 @@ class Home extends Component {
     return (
       <div className="card-panel grey lighten-2 jumbotron">
         <div className="container">
-          <h1>SpaceX Stats</h1>
-          <p>
+          <h1 data-testid="home-title">SpaceX Stats</h1>
+          <p data-testid="home-details">
             View your favourite SpaceX launches, filter by your favourite rocket
             and relive History!
           </p>
-          <div className="home-images">{images}</div>
+          <div data-testid="home-images" className="home-images">
+            {images}
+          </div>
         </div>
       </div>
     );
