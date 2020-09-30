@@ -9,7 +9,7 @@ const NavComponent = () => (
       </NavLink>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
         <li>
-          <NavLink className="nav-link" to="/">
+          <NavLink className="nav-link" to="/launches">
             Launches
           </NavLink>
         </li>
