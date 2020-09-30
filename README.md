@@ -20,7 +20,7 @@
 - Styled with Materialize-css
 - Tested with Jest and react-testing-library
 - [SpaceX API](https://github.com/r-spacex/SpaceX-API)
-- ES6 JavaScript.
+- ES6 JavaScript
 - HTML, CSS
 
 ## Live Demo
