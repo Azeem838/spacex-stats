@@ -1,5 +1,11 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import CardList from './CardList';
 
-const Launches = () => <div>Launches Page</div>;
+const Launches = () => (
+  <div>
+    <CardList />
+  </div>
+);
 
-export default Launches;
+export default withRouter(Launches);
