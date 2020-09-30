@@ -12,13 +12,11 @@ const rootReducer = (state = initialState, action) => {
   }
   if (action.type === 'ALL_ROCKETS') {
     const rockets = [];
-    action.rockets.map((rocket) => {
-      return rockets.push({
-        id: rocket.id,
-        name: rocket.name,
-        images: rocket.flickr_images,
-      });
-    });
+    action.rockets.map(rocket => rockets.push({
+      id: rocket.id,
+      name: rocket.name,
+      images: rocket.flickr_images,
+    }));
     return {
       ...state,
       rockets,
@@ -28,10 +26,5 @@ const rootReducer = (state = initialState, action) => {
     ...state,
   };
 };
-
-// import { combineReducers } from 'redux';
-// import launch from './launch';
-
-// const rootReducer = combineReducers({ launch });
 
 export default rootReducer;

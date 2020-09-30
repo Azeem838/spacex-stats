@@ -1,31 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import logo from '../images/default-launch-image.jpg';
 
 const CardComponent = ({ data }) => {
+  const {
+    id, links, name, details,
+  } = data;
+  const imgCheck = links.flickr.original[0]
+    ? links.flickr.original[0]
+    : links.patch.small;
   return (
     <div className="col s12 m6">
-      <Link to={'/' + data.id}>
+      <Link to={`/${id}`}>
         <div className="card horizontal hoverable">
           <div className="card-image">
-            <img
-              alt="Launch"
-              src={
-                data.links.flickr.original[0]
-                  ? data.links.flickr.original[0]
-                  : data.links.patch.small
-                  ? data.links.patch.small
-                  : logo
-              }
-            />
+            <img alt="Launch" src={imgCheck !== null ? imgCheck : logo} />
           </div>
           <div className="card-stacked">
             <div className="card-content">
-              <span className="card-title">{data.name}</span>
+              <span className="card-title">{name}</span>
               <p className="black-text">
-                {data.details
-                  ? data.details.substr(0, 50)
-                  : 'No details available'}
+                {details ? details.substr(0, 50) : 'No details available'}
                 ...
               </p>
             </div>
@@ -37,6 +33,20 @@ const CardComponent = ({ data }) => {
       </Link>
     </div>
   );
+};
+
+CardComponent.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.string,
+    links: PropTypes.shape({
+      flickr: PropTypes.shape({
+        original: PropTypes.arrayOf(PropTypes.string),
+      }),
+      patch: PropTypes.objectOf(PropTypes.string),
+    }),
+    name: PropTypes.string,
+    details: PropTypes.string,
+  }).isRequired,
 };
 
 export default CardComponent;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Tabs = ({ rockets, handleFilter }) => {
   const rocketNames = rockets.map((rocket, i) => (
@@ -31,6 +32,11 @@ const Tabs = ({ rockets, handleFilter }) => {
       </li>
     </ul>
   );
+};
+
+Tabs.propTypes = {
+  rockets: PropTypes.arrayOf(PropTypes.object).isRequired,
+  handleFilter: PropTypes.func.isRequired,
 };
 
 export default Tabs;

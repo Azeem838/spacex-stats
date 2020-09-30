@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as actionCreators from '../actions/index';
 import CardList from '../containers/CardList';
 import Tabs from '../containers/Tabs';
@@ -13,10 +14,12 @@ class Launches extends Component {
   }
 
   componentDidMount() {
-    this.props.loadLaunches();
-    this.props.loadRockets();
+    const { loadLaunches, loadRockets } = this.props;
+    loadLaunches();
+    loadRockets();
   }
-  handleFilter = (e) => {
+
+  handleFilter = e => {
     const filter = e.target.getAttribute('data-key');
     this.setState({
       filter,
@@ -24,11 +27,13 @@ class Launches extends Component {
   };
 
   render() {
-    if (this.props.rockets.length > 1) {
+    const { rockets, launches } = this.props;
+    const { filter } = this.state;
+    if (rockets.length > 1) {
       return (
         <div className="container">
-          <Tabs handleFilter={this.handleFilter} rockets={this.props.rockets} />
-          <CardList filter={this.state.filter} launches={this.props.launches} />
+          <Tabs handleFilter={this.handleFilter} rockets={rockets} />
+          <CardList filter={filter} launches={launches} />
         </div>
       );
     }
@@ -36,9 +41,16 @@ class Launches extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   launches: state.launches,
   rockets: state.rockets,
 });
+
+Launches.propTypes = {
+  loadLaunches: PropTypes.func.isRequired,
+  loadRockets: PropTypes.func.isRequired,
+  rockets: PropTypes.arrayOf(PropTypes.object).isRequired,
+  launches: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default connect(mapStateToProps, actionCreators)(Launches);

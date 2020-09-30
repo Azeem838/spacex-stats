@@ -1,28 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as actionCreators from '../actions/index';
 
 class Home extends Component {
   componentDidMount() {
-    this.props.loadRockets();
+    const { loadRockets } = this.props;
+    loadRockets();
   }
 
   render() {
-    const images = this.props.rockets.map((rocket) => {
-      return (
-        <div className="img__wrap">
-          <img
-            className="img__img"
-            src={rocket.images[0]}
-            alt={rocket.name}
-            key={rocket.id + rocket.name}
-          />
-          <p className="img__description">
-            <div className="img__text">{rocket.name}</div>
-          </p>
+    const { rockets } = this.props;
+    const images = rockets.map(rocket => (
+      <div className="img__wrap" key={rocket.id + rocket.name}>
+        <img className="img__img" src={rocket.images[0]} alt={rocket.name} />
+        <div className="img__description">
+          <div className="img__text">{rocket.name}</div>
         </div>
-      );
-    });
+      </div>
+    ));
 
     return (
       <div className="card-panel grey lighten-2 jumbotron">
@@ -39,8 +35,13 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   rockets: state.rockets,
 });
+
+Home.propTypes = {
+  loadRockets: PropTypes.func.isRequired,
+  rockets: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default connect(mapStateToProps, actionCreators)(Home);
