@@ -24,6 +24,8 @@ jobs:
     name: Stylelint
     runs-on: ubuntu-18.04
     steps:
+      - if: github.head_ref == 'release' && github.event.label.name == 'deploy_ios'
+      - uses: actions/checkout@v1
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
