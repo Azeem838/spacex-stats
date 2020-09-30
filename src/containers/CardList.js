@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from '../components/Card';
 
 const CardList = ({ launches, filter }) => {
-  if (Object.getOwnPropertyNames(launches).length !== 0) {
+  if (launches.length !== 0) {
     let filterLaunches;
     if (filter === '' || filter === 'all') {
       filterLaunches = launches.slice(1).slice(-10);
@@ -21,9 +21,13 @@ const CardList = ({ launches, filter }) => {
       <Card data={launch} key={launch.id} />
     ));
 
-    return <div className="launch-contain">{cardList}</div>;
+    return (
+      <div data-testid="with-props" className="launch-contain">
+        {cardList}
+      </div>
+    );
   }
-  return <div>Loading ...</div>;
+  return <div data-testid="without-props">Loading ...</div>;
 };
 
 CardList.propTypes = {
