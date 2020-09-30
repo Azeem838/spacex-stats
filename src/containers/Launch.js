@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Moment from 'moment';
+import M from 'materialize-css';
+import { getRockets } from '../actions';
 
 class Launch extends Component {
   state = {
@@ -14,10 +16,40 @@ class Launch extends Component {
     });
   }
 
+  componentDidUpdate() {
+    try {
+      const elems = document.querySelectorAll('.carousel');
+      const instance = M.Carousel.init(elems, {
+        fullWidth: true,
+      });
+    } catch (error) {
+      return null;
+    }
+  }
+
   render() {
     const launch = this.props.launches.find(
       (launch) => launch.id === this.state.id,
     );
+
+    let imageList;
+
+    if (launch) {
+      if (launch.links.flickr.original) {
+        imageList = launch.links.flickr.original.map((link, i) => {
+          return (
+            <a
+              className="carousel-item"
+              href={'#' + i}
+              key={launch.id + Math.random()}
+              style={{ pointerEvents: 'none' }}
+            >
+              <img src={link} alt="spacex-img" />
+            </a>
+          );
+        });
+      }
+    }
 
     return launch ? (
       <div>
@@ -72,6 +104,9 @@ class Launch extends Component {
             >
               <i className="material-icons">link</i>Launch Discussion
             </a>
+          </div>
+          <div className="carousel carousel-slider">
+            {imageList.length ? imageList : 'No Images Yet'}
           </div>
         </div>
       </div>
