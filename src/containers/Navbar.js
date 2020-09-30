@@ -4,32 +4,48 @@ import { NavLink, withRouter } from 'react-router-dom';
 const NavComponent = () => (
   <nav>
     <div className="nav-wrapper container">
-      <NavLink className="brand-logo" to="/">
+      <NavLink data-testid="logo-link" className="brand-logo" to="/">
         SpaceX Stats
       </NavLink>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
         <li>
-          <NavLink className="nav-link" to="/launches">
+          <NavLink
+            data-testid="launches-link"
+            className="nav-link"
+            to="/launches"
+          >
             Launches
           </NavLink>
         </li>
         <li>
-          <NavLink className="nav-link" to="/dragons">
+          <NavLink
+            data-testid="dragons-link"
+            className="nav-link"
+            to="/dragons"
+          >
             Dragons
           </NavLink>
         </li>
         <li>
-          <NavLink className="nav-link" to="/rockets">
+          <NavLink
+            data-testid="rockets-link"
+            className="nav-link"
+            to="/rockets"
+          >
             Rockets
           </NavLink>
         </li>
         <li>
-          <NavLink className="nav-link" to="/ships">
+          <NavLink data-testid="ships-link" className="nav-link" to="/ships">
             Ships
           </NavLink>
         </li>
         <li>
-          <NavLink className="nav-link" to="/landpads">
+          <NavLink
+            data-testid="landpads-link"
+            className="nav-link"
+            to="/landpads"
+          >
             Landpads
           </NavLink>
         </li>
