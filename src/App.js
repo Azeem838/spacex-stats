@@ -6,7 +6,7 @@ import Landpads from './pages/Landpads';
 import Rockets from './pages/Rockets';
 import Ships from './pages/Ships';
 import Launches from './pages/Launches';
-import Launch from './pages/Launch';
+import Launch from './pages/LaunchDetails';
 import Home from './pages/Home';
 
 function App() {

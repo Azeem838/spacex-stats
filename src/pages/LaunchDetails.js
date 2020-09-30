@@ -116,8 +116,8 @@ class Launch extends Component {
   }
 }
 
-const mapStateToPropes = (state) => ({
+const mapStateToProps = (state) => ({
   launches: state.launches,
 });
 
-export default connect(mapStateToPropes)(Launch);
+export default connect(mapStateToProps)(Launch);
