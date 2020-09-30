@@ -2,14 +2,17 @@ import React from 'react';
 
 const Tabs = ({ rockets, handleFilter }) => {
   const rocketNames = rockets.map((rocket, i) => (
-    <li className="tab" key={rocket.id}>
-      <a onClick={handleFilter} data-key={rocket.id} href={`#test'${i}`}>
+    <li
+      className={rocket.name === 'Starship' ? 'tab disabled' : 'tab'}
+      key={rocket.id}
+    >
+      <a onClick={handleFilter} data-key={rocket.id} href={`#${i}`}>
         {rocket.name}
       </a>
     </li>
   ));
   return (
-    <ul className="tabs tabs-fixed-width tab-demo z-depth-1">
+    <ul className="tabs tabs-fixed-width z-depth-1">
       <li className="tab" key="all">
         <a onClick={handleFilter} data-key="all" href="#all">
           All
