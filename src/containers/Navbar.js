@@ -3,7 +3,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 
 const NavComponent = () => (
   <nav>
-    <div className="nav-wrapper">
+    <div className="nav-wrapper container">
       <NavLink className="brand-logo" to="/">
         SpaceX Stats
       </NavLink>
