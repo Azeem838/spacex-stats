@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavComponent from './containers/Navbar';
-import Dragons from './containers/Dragons';
-import Landpads from './containers/Landpads';
-import Rockets from './containers/Rockets';
-import Ships from './containers/Ships';
-import Launches from './containers/Launches';
-import Launch from './containers/Launch';
-import Home from './containers/Home';
+import Dragons from './pages/Dragons';
+import Landpads from './pages/Landpads';
+import Rockets from './pages/Rockets';
+import Ships from './pages/Ships';
+import Launches from './pages/Launches';
+import Launch from './pages/Launch';
+import Home from './pages/Home';
 
 function App() {
   return (
