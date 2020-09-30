@@ -6,9 +6,14 @@ import Card from '../components/Card';
 class CardList extends Component {
   componentDidMount() {
     this.props.loadLaunches();
+    this.props.loadRockets();
   }
 
   render() {
+    if (this.props.rockets.length !== 0) {
+      // console.log(this.props.rockets);
+    }
+
     if (Object.getOwnPropertyNames(this.props.launches).length !== 0) {
       const prevLaunches = this.props.launches
         .filter((launch) => {
@@ -30,6 +35,7 @@ class CardList extends Component {
 
 const mapStateToPropes = (state) => ({
   launches: state.launches,
+  rockets: state.rockets,
 });
 
 export default connect(mapStateToPropes, actionCreators)(CardList);
