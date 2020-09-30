@@ -117,6 +117,7 @@ class Launch extends Component {
               Launch Discussion
             </a>
           </div>
+          <h4>Gallery:</h4>
           <div className="carousel carousel-slider">
             {imageList.length ? imageList : 'No Images Yet'}
           </div>
