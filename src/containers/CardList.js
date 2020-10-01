@@ -6,12 +6,9 @@ const CardList = ({ launches, filter }) => {
   if (launches.length !== 0) {
     let filterLaunches;
     if (filter === '' || filter === 'all') {
-      filterLaunches = launches.slice(1).slice(-10);
+      filterLaunches = launches;
     } else if (filter === 'previous') {
-      filterLaunches = launches
-        .filter(launch => launch.upcoming === false)
-        .slice(1)
-        .slice(-10);
+      filterLaunches = launches.filter(launch => launch.upcoming === false);
     } else if (filter === 'upcoming') {
       filterLaunches = launches.filter(launch => launch.upcoming === true);
     } else {

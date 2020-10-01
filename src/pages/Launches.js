@@ -31,7 +31,10 @@ class Launches extends Component {
     const { filter } = this.state;
     if (rockets.length > 1) {
       return (
-        <div data-testid="launches-container" className="container">
+        <div
+          data-testid="launches-container"
+          className="container main-launches-container"
+        >
           <Tabs handleFilter={this.handleFilter} rockets={rockets} />
           <CardList filter={filter} launches={launches} />
         </div>
