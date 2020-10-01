@@ -56,7 +56,7 @@ class Launch extends Component {
     }
 
     return launch ? (
-      <div>
+      <div className="launch-details-container">
         <h3 data-testid="launch-details-name" className="center">
           {launch.name}
         </h3>

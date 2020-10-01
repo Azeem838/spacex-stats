@@ -1,6 +1,6 @@
 <p align="center">
   <a>
-    <p align="center"> <img src="./spacex-stats-screenshot.gif" alt="spacex-stats"> </p>
+    <p align="center"> <img src="./spacex-stats-screenshot-new.gif" alt="spacex-stats"> </p>
   </a>
 
   <h2 align="center">SpaceX Stats</h2>

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 
 const NavComponent = () => (
-  <nav>
+  <nav className="deep-orange accent-1">
     <div className="nav-wrapper container">
       <NavLink data-testid="logo-link" className="brand-logo" to="/">
         SpaceX Stats
