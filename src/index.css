@@ -182,3 +182,15 @@ code {
   bottom: 0;
   margin: auto;
 }
+
+.nav-contain {
+  display: flex;
+  justify-content: space-around;
+}
+
+.brand {
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 0;
+}
