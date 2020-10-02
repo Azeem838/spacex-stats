@@ -5,13 +5,20 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import Launches from '../pages/Launches';
+import Launches from '../containers/Launches';
 import { loadRockets, loadLaunches } from '../actions/index';
 
 expect.extend({ toBeInTheDocument, toHaveStyle });
 
 const mockState = {
-  launches: [{ name: 'CRS-21', details: 'Launch of CRS-21', image: 'hello' }],
+  launches: [
+    {
+      name: 'CRS-21',
+      details: 'Launch of CRS-21',
+      image: 'hello',
+      links: { flickr: { original: ['hello'] } },
+    },
+  ],
 
   rockets: [
     {
@@ -35,6 +42,7 @@ const mockState = {
       name: 'Starship',
     },
   ],
+  filter: 'all',
 };
 
 const middlewares = [thunk];
@@ -80,23 +88,4 @@ it('should have the required elements with content', () => {
   );
 
   expect(launchesContainer).toBeInTheDocument();
-});
-
-it('should return Loading without content', () => {
-  const store = mockStore({ rockets: [], launches: [] });
-
-  render(
-    <Provider store={store}>
-      <Router>
-        <Launches />
-      </Router>
-    </Provider>,
-  );
-
-  const loadingLaunches = getByTestId(
-    document.documentElement,
-    'loading-launches',
-  );
-
-  expect(loadingLaunches).toBeInTheDocument();
 });
