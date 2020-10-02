@@ -27,7 +27,7 @@ class Launches extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   launches: state.launches,
   rockets: state.rockets,
   filter: state.filter,

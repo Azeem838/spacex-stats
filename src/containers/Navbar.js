@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import M from 'materialize-css';
+import PropTypes from 'prop-types';
 import { changeFilter } from '../actions/index';
 
 class NavBar extends React.Component {
@@ -10,14 +11,14 @@ class NavBar extends React.Component {
     M.Sidenav.init(elems, {});
   }
 
-  handleFilter = (e) => {
+  handleFilter = e => {
     const { changeFilter } = this.props;
     changeFilter(e.target.getAttribute('data-key'));
   };
 
   render() {
     const { rockets } = this.props;
-    const rocketNames = rockets.map((rocket) => (
+    const rocketNames = rockets.map(rocket => (
       <li key={rocket.id}>
         <NavLink
           data-testid={`${rocket.name}-tab`}
@@ -132,14 +133,19 @@ class NavBar extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   rockets: state.rockets,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  changeFilter: (filter) => {
+const mapDispatchToProps = dispatch => ({
+  changeFilter: filter => {
     dispatch(changeFilter(filter));
   },
 });
+
+NavBar.propTypes = {
+  changeFilter: PropTypes.func.isRequired,
+  rockets: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(NavBar));

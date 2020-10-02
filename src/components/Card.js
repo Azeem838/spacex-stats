@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import logo from '../images/default-launch-image.jpg';
 
 const CardComponent = ({ data }) => {
-  const { id, links, name, details } = data;
+  const {
+    id, links, name, details,
+  } = data;
   const imgCheck = links.flickr.original[0]
     ? links.flickr.original[0]
     : links.patch.small;

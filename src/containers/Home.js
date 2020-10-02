@@ -11,7 +11,7 @@ class Home extends Component {
 
   render() {
     const { rockets } = this.props;
-    const images = rockets.map((rocket) => (
+    const images = rockets.map(rocket => (
       <div className="img__wrap" key={rocket.id + rocket.name}>
         <img className="img__img" src={rocket.images[0]} alt={rocket.name} />
         <div className="img__description">
@@ -37,7 +37,7 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   rockets: state.rockets,
 });
 
