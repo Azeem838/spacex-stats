@@ -5,7 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import Launch from '../pages/LaunchDetails';
+import Launch from '../containers/LaunchDetails';
 import Card from '../components/Card';
 
 expect.extend({ toBeInTheDocument, toHaveStyle });
