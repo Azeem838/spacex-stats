@@ -36,8 +36,12 @@ class NavBar extends React.Component {
     return (
       <div>
         <nav className="deep-orange accent-1">
-          <div className="nav-wrapper nav-contain">
-            <NavLink data-testid="logo-link" className="brand-logo" to="/">
+          <div className="nav-contain browser-default">
+            <NavLink
+              data-testid="logo-link"
+              className="brand browser-default"
+              to="/"
+            >
               SpaceX Stats
             </NavLink>
             <a
@@ -47,7 +51,7 @@ class NavBar extends React.Component {
             >
               <i className="material-icons">menu</i>
             </a>
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <ul id="nav-mobile" className="hide-on-med-and-down">
               <li>
                 <NavLink
                   data-testid="all-tab"
