@@ -125,9 +125,7 @@ class Launch extends Component {
           </div>
         </div>
       </div>
-    ) : (
-      <div data-testid="laoding-launch">Loading ...</div>
-    );
+    ) : null;
   }
 }
 
