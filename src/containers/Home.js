@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { NavLink, withRouter } from 'react-router-dom';
 import * as actionCreators from '../actions/index';
 
 class Home extends Component {
@@ -9,15 +10,34 @@ class Home extends Component {
     loadRockets();
   }
 
+  handleFilter = e => {
+    const { changeFilter } = this.props;
+    changeFilter(e.target.getAttribute('data-key'));
+  };
+
   render() {
     const { rockets } = this.props;
     const images = rockets.map(rocket => (
-      <div className="img__wrap" key={rocket.id + rocket.name}>
-        <img className="img__img" src={rocket.images[0]} alt={rocket.name} />
-        <div className="img__description">
-          <div className="img__text">{rocket.name}</div>
+      <NavLink
+        to={`/launches/${rocket.name}`}
+        onClick={this.handleFilter}
+        key={rocket.id + rocket.name}
+        data-key={rocket.id}
+      >
+        <div className="img__wrap" data-key={rocket.id}>
+          <img
+            data-key={rocket.id}
+            className="img__img"
+            src={rocket.images[0]}
+            alt={rocket.name}
+          />
+          <div className="img__description" data-key={rocket.id}>
+            <div className="img__text" data-key={rocket.id}>
+              {rocket.name}
+            </div>
+          </div>
         </div>
-      </div>
+      </NavLink>
     ));
 
     return (
@@ -42,8 +62,9 @@ const mapStateToProps = state => ({
 });
 
 Home.propTypes = {
-  loadRockets: PropTypes.func.isRequired,
   rockets: PropTypes.arrayOf(PropTypes.object).isRequired,
+  changeFilter: PropTypes.func.isRequired,
+  loadRockets: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, actionCreators)(Home);
+export default connect(mapStateToProps, actionCreators)(withRouter(Home));
