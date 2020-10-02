@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import Home from '../pages/Home';
+import Home from '../containers/Home';
 import { loadRockets } from '../actions/index';
 
 expect.extend({ toBeInTheDocument, toHaveStyle });
