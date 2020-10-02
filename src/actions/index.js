@@ -6,11 +6,12 @@ export function getLaunches(launches) {
 }
 
 export function loadLaunches() {
-  return dispatch => fetch('https://api.spacexdata.com/v4/launches')
-    .then(response => response.json())
-    .then(data => {
-      dispatch(getLaunches(data));
-    });
+  return (dispatch) =>
+    fetch('https://api.spacexdata.com/v4/launches')
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(getLaunches(data));
+      });
 }
 
 export function getRockets(rockets) {
@@ -21,9 +22,14 @@ export function getRockets(rockets) {
 }
 
 export function loadRockets() {
-  return dispatch => fetch('https://api.spacexdata.com/v4/rockets')
-    .then(response => response.json())
-    .then(data => {
-      dispatch(getRockets(data));
-    });
+  return (dispatch) =>
+    fetch('https://api.spacexdata.com/v4/rockets')
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(getRockets(data));
+      });
+}
+
+export function changeFilter(filter) {
+  return { type: 'CHANGE_FILTER', filter };
 }
