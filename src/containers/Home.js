@@ -21,7 +21,7 @@ class Home extends Component {
     ));
 
     return (
-      <div className="card-panel grey lighten-2 jumbotron">
+      <div className="jumbotron">
         <div className="container">
           <h1 data-testid="home-title">SpaceX Stats</h1>
           <p style={{ fontSize: '1.5rem' }} data-testid="home-details">

@@ -144,14 +144,24 @@ code {
     rgba(105, 145, 199, 1) 100%
   );
   background-repeat: no-repeat;
+  overflow: scroll;
+  height: 100vh;
 }
 
 .main-launches-container {
   height: 100vh;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.main-launches-container::-webkit-scrollbar {
+  display: none;
 }
 
 .App {
   height: 100vh;
+  overflow: hidden;
 }
 
 .preloader {
