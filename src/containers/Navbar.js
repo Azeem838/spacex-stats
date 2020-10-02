@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { changeFilter } from '../actions/index';
 import M from 'materialize-css';
+import { changeFilter } from '../actions/index';
 
 class NavBar extends React.Component {
   componentDidMount() {
@@ -49,7 +49,7 @@ class NavBar extends React.Component {
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
                 <NavLink
-                  data-testid="launches-link"
+                  data-testid="all-tab"
                   className="nav-link"
                   to="/launches/all"
                   onClick={this.handleFilter}
@@ -91,7 +91,7 @@ class NavBar extends React.Component {
         <ul className="sidenav" id="mobile-demo">
           <li>
             <NavLink
-              data-testid="launches-link"
+              data-testid="all-tab"
               className="nav-link"
               to="/launches/all"
               onClick={this.handleFilter}
