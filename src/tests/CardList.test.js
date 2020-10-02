@@ -67,8 +67,4 @@ test('CardList displays Loading... without data', () => {
   expect(
     queryByTestId(document.documentElement, 'with-props'),
   ).not.toBeInTheDocument();
-
-  expect(
-    getByTestId(document.documentElement, 'without-props'),
-  ).toBeInTheDocument();
 });
