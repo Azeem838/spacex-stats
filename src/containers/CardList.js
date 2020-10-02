@@ -15,11 +15,11 @@ const CardList = ({ launches, filter }) => {
       filterLaunches = launches.filter((launch) => launch.rocket === filter);
     }
     const cardList = filterLaunches.map((launch) => (
-      <Card data={launch} key={launch.id} />
+      <Card data={launch} key={launch.id + Math.random()} />
     ));
 
     return (
-      <div data-testid="with-props" className="launch-contain">
+      <div data-testid="with-props" className="launch-contain container">
         {cardList}
       </div>
     );
