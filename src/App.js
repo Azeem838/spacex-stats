@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './containers/Navbar';
 import Home from './containers/Home';
 import Loading from './components/Loading';
-
 const Launches = lazy(() => import('./containers/Launches'));
 const Launch = lazy(() => import('./containers/LaunchDetails'));
 
