@@ -8,13 +8,13 @@ const CardList = ({ launches, filter }) => {
     if (filter === '' || filter === 'all') {
       filterLaunches = launches;
     } else if (filter === 'previous') {
-      filterLaunches = launches.filter(launch => launch.upcoming === false);
+      filterLaunches = launches.filter((launch) => launch.upcoming === false);
     } else if (filter === 'upcoming') {
-      filterLaunches = launches.filter(launch => launch.upcoming === true);
+      filterLaunches = launches.filter((launch) => launch.upcoming === true);
     } else {
-      filterLaunches = launches.filter(launch => launch.rocket === filter);
+      filterLaunches = launches.filter((launch) => launch.rocket === filter);
     }
-    const cardList = filterLaunches.map(launch => (
+    const cardList = filterLaunches.map((launch) => (
       <Card data={launch} key={launch.id} />
     ));
 
@@ -24,7 +24,7 @@ const CardList = ({ launches, filter }) => {
       </div>
     );
   }
-  return <div data-testid="without-props">Loading ...</div>;
+  return null;
 };
 
 CardList.propTypes = {

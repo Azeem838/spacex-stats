@@ -23,7 +23,7 @@ class Launches extends Component {
         </div>
       );
     }
-    return <div data-testid="loading-launches">Loading...</div>;
+    return null;
   }
 }
 
