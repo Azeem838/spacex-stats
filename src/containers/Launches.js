@@ -17,7 +17,7 @@ class Launches extends Component {
       return (
         <div
           data-testid="launches-container"
-          className="container main-launches-container"
+          className="main-launches-container"
         >
           <CardList filter={filter} launches={launches} />
         </div>
