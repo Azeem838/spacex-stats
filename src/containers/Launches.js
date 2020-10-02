@@ -12,18 +12,12 @@ class Launches extends Component {
   }
 
   render() {
-    const { rockets, launches, filter } = this.props;
-    if (rockets.length > 1) {
-      return (
-        <div
-          data-testid="launches-container"
-          className="main-launches-container"
-        >
-          <CardList filter={filter} launches={launches} />
-        </div>
-      );
-    }
-    return null;
+    const { launches, filter } = this.props;
+    return (
+      <div data-testid="launches-container" className="main-launches-container">
+        <CardList filter={filter} launches={launches} />
+      </div>
+    );
   }
 }
 
@@ -36,7 +30,6 @@ const mapStateToProps = state => ({
 Launches.propTypes = {
   loadLaunches: PropTypes.func.isRequired,
   loadRockets: PropTypes.func.isRequired,
-  rockets: PropTypes.arrayOf(PropTypes.object).isRequired,
   launches: PropTypes.arrayOf(PropTypes.object).isRequired,
   filter: PropTypes.string.isRequired,
 };
