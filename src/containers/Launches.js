@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as actionCreators from '../actions/index';
-import CardList from '../containers/CardList';
-import Tabs from '../containers/Tabs';
+import CardList from './CardList';
+import Tabs from './Tabs';
 
 class Launches extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Launches extends Component {
     loadRockets();
   }
 
-  handleFilter = e => {
+  handleFilter = (e) => {
     const filter = e.target.getAttribute('data-key');
     this.setState({
       filter,
@@ -44,7 +44,7 @@ class Launches extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   launches: state.launches,
   rockets: state.rockets,
 });
