@@ -57,19 +57,3 @@ it('should display the Loading sign information', () => {
   const readMore = getByTestId(document.documentElement, 'read-more');
   fireEvent.click(readMore);
 });
-
-it('should display the Loading sign information', () => {
-  const store = mockStore(mockProps);
-
-  render(
-    <Provider store={store}>
-      <BrowserRouter>
-        <Route component={Launch} />
-      </BrowserRouter>
-    </Provider>,
-  );
-
-  const laodingLaunch = getByTestId(document.documentElement, 'laoding-launch');
-
-  expect(laodingLaunch).toBeInTheDocument();
-});
