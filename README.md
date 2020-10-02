@@ -59,6 +59,16 @@ Clone this repo with <code>git@github.com:Azeem838/spacex-stats.git</code>
 3. Navigate to [localhost:8000](http://localhost:3000) in your browser.
 4. Enjoy :smiley:
 
+### Testing
+
+The tests were written with React Testing Library and Jest.
+
+Run `npm test` and on the prompt press `a`
+
+Note: if you get an ASYNC timeout of 5 seconds, please re-run the tests, depending on your internet connection, the API might take a little longer to respond.
+
+## Developer
+
 :bust_in_silhouette: **Azeem Ahmed**
 
 - Github: [@Azeem838](https://github.com/Azeem838)
